@@ -1,10 +1,12 @@
 import "./App.css";
-import Loading from "./components/Loading";
+import Container from "./components/Container";
 
-export default function App() {
+function App() {
   return (
     <div>
-      <Loading />
+      <Container />
     </div>
   );
 }
+
+export default App;
