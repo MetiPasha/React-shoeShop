@@ -6,7 +6,7 @@ import { z } from "zod";
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [failedAttempts, setFailedAttempts] = useState<number>(0); // tedad talashe namoafaq
+  const [failedAttempts, setFailedAttempts] = useState<number>(0); //tedad talash haye namoafagh
   const [blockedUntil, setBlockedUntil] = useState<number>(0);
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -59,7 +59,6 @@ const Login = () => {
         setErrorMessage("The entered password is not correct.");
       } else {
         setErrorMessage("Login successful!");
-        // Redirect to homepage (logic not implemented here)
       }
     } catch (error) {
       if (error instanceof z.ZodError) {

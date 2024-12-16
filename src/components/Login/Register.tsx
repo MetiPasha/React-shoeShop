@@ -18,7 +18,6 @@ const Register = () => {
   });
   const [errorMessage, setErrorMessage] = useState("");
 
-  // yek skimaye koli baraye form
   const registerSchema = z.object({
     username: z
       .string()
@@ -52,10 +51,10 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      // check kardane etebare form
+      //barressi etebare form
       registerSchema.parse(formData);
 
-      // check kardane tatbiqe passwordha
+      // baressi tataboq password
       if (formData.password !== formData.repeatPassword) {
         setErrorMessage("Passwords do not match.");
       } else {
@@ -124,7 +123,6 @@ const Register = () => {
             )}
           </div>
 
-          {/* First Name / Last Name */}
           <div className="relative mt-8 flex justify-between gap-4 items-center max-w-md mx-auto">
             <div>
               <FaUserAlt className="absolute text-lg left-3 mt-3 text-gray-500" />
@@ -166,7 +164,6 @@ const Register = () => {
             )}
           </div>
 
-          {/* Repeat Password */}
           <div className="relative mt-8 flex flex-col items-center max-w-md mx-auto">
             <RiLockPasswordFill className="absolute text-lg left-3 mt-4 text-gray-500" />
             <input
@@ -182,7 +179,6 @@ const Register = () => {
             )}
           </div>
 
-          {/* Gender and Phone */}
           <div className="relative mt-8 gap-4 flex justify-between items-center max-w-md mx-auto">
             <div className="flex items-center space-x-2">
               <ImUsers className="text-lg absolute left-2 text-gray-500" />
@@ -213,7 +209,6 @@ const Register = () => {
             </div>
           </div>
 
-          {/* Terms and Conditions */}
           <div className="mt-8 flex items-start gap-2 max-w-md mx-auto">
             <input type="checkbox" className="mt-2 flex items-start" />
             <p className="text-start">
@@ -221,7 +216,6 @@ const Register = () => {
             </p>
           </div>
 
-          {/* Submit Button */}
           <button
             type="submit"
             className="rounded-full mt-36 text-xl bg-black text-white w-full p-2"
@@ -229,7 +223,6 @@ const Register = () => {
             Sign Up
           </button>
 
-          {/* Login Link */}
           <div className="flex gap-16 p-4 items-center">
             <p className="text-gray-400">Don't have an account yet?</p>
             <h2>Login Now</h2>
