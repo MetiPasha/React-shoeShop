@@ -7,10 +7,10 @@ import ResetPassword from "./components/Login/ResetPassword";
 function App() {
   return (
     <div>
-      {/* <Container /> */}
+      <Container />
       {/* <Login /> */}
       {/* <Register /> */}
-      <ResetPassword />
+      {/* <ResetPassword /> */}
     </div>
   );
 }
