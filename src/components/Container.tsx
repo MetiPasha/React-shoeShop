@@ -1,18 +1,19 @@
-// import Loading from "./Loading"
-import shoesImage from "../../public/assets/shoes.svg";
 import { useEffect, useState } from "react";
+import shoesImage from "../../public/assets/shoes.svg";
 import Loading from "./Loading";
 
 type OnboardingState = "loading" | "welcome" | "slide1" | "slide2" | "slide3";
+
 const Container = () => {
   const [currentState, setCurrentState] = useState<OnboardingState>("loading");
   useEffect(() => {
-    if (currentState === "loading") {
-      setTimeout(() => {
+    setTimeout(() => {
+      if (currentState === "loading") {
         setCurrentState("welcome");
-      }, 5000); // Wait for 5 seconds before moving to the next screen
-    }
+      }
+    }, 5000);
   }, [currentState]);
+
   const renderContent = () => {
     switch (currentState) {
       case "loading":
@@ -44,12 +45,10 @@ const Container = () => {
         return (
           <div className="flex flex-col h-screen mx-auto w-[25rem] bg-gray-300">
             <div className="w-full">
-              {" "}
-              {/* Set to 100% of the parent div width */}
               <img
                 src="../../public/assets/page1.svg"
                 alt=""
-                className="w-full h-[30rem] object-cover" // Ensures it scales to the div width
+                className="w-full h-[30rem] object-cover"
               />
             </div>
             <div className="flex flex-col items-center mt-4 p-2 ">
@@ -57,7 +56,7 @@ const Container = () => {
               <img
                 src="../../public/assets/dash1.svg"
                 alt=""
-                className="w-36 mt-8" // Makes this image take up the full width of the parent container
+                className="w-36 mt-8"
               />
               <button
                 onClick={() => setCurrentState("slide2")}
@@ -73,12 +72,10 @@ const Container = () => {
         return (
           <div className="flex flex-col h-screen mx-auto w-[25rem] bg-gray-300">
             <div className="w-full">
-              {" "}
-              {/* Set to 100% of the parent div width */}
               <img
                 src="../../public/assets/page2.svg"
                 alt=""
-                className="w-full h-[30rem] object-cover" // Ensures it scales to the div width
+                className="w-full h-[30rem] object-cover"
               />
             </div>
             <div className="flex flex-col items-center mt-4 p-2 ">
@@ -88,7 +85,7 @@ const Container = () => {
               <img
                 src="../../public/assets/dash2.svg"
                 alt=""
-                className="w-36 mt-8" // Makes this image take up the full width of the parent container
+                className="w-36 mt-8"
               />
               <button
                 onClick={() => setCurrentState("slide3")}
@@ -104,12 +101,10 @@ const Container = () => {
         return (
           <div className="flex flex-col h-screen mx-auto w-[25rem] bg-gray-300">
             <div className="w-full">
-              {" "}
-              {/* Set to 100% of the parent div width */}
               <img
                 src="../../public/assets/page3.svg"
                 alt=""
-                className="w-full h-[30rem] object-cover" // Ensures it scales to the div width
+                className="w-full h-[30rem] object-cover"
               />
             </div>
             <div className="flex flex-col items-center mt-4 p-2 ">
@@ -119,7 +114,7 @@ const Container = () => {
               <img
                 src="../../public/assets/dash3.svg"
                 alt=""
-                className="w-36 mt-8" // Makes this image take up the full width of the parent container
+                className="w-36 mt-8"
               />
               <button
                 onClick={() => setCurrentState("loading")}
@@ -132,7 +127,7 @@ const Container = () => {
         );
 
       default:
-        return <div>Something went wrong</div>;
+        break;
     }
   };
   return <div className="md:container md:mx-auto">{renderContent()}</div>;
