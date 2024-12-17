@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { CircleLoader } from "react-spinners";
+import { RingLoader } from "react-spinners";
 
 const Loading = () => {
   const navigate = useNavigate();
@@ -12,8 +12,8 @@ const Loading = () => {
   }, []);
   return (
     <div className="flex flex-col items-center gap-36 justify-center  p-2  ">
-      <h1 className="text-3xl font-semibold mt-[15rem]">shoea</h1>
-      <CircleLoader className="mt-40 " />
+      <h1 className="text-3xl font-semibold mt-[15rem]">Shoea</h1>
+      <RingLoader className="mt-40 " />
     </div>
   );
 };
