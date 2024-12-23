@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { MdEmail } from "react-icons/md";
 import { PiLockKeyBold } from "react-icons/pi";
 import { z } from "zod";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -9,6 +10,8 @@ const Login = () => {
   const [failedAttempts, setFailedAttempts] = useState<number>(0); //tedad talash haye namoafagh
   const [blockedUntil, setBlockedUntil] = useState<number>(0);
   const [errorMessage, setErrorMessage] = useState("");
+
+  const navigate = useNavigate();
 
   const usernameSchema = z
     .string()

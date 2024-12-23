@@ -1,7 +1,7 @@
 import { useState } from "react";
-import ProductCard, { IProductProps } from "../products/ProductCard";
+import ProductCard, { IProductProps } from "../Products/ProductCard";
 import Container from "../../Container";
-import Layout from "../layout/Layout";
+import Layout from "../Layout/Layout";
 
 const Favorites = () => {
   const [favorites, setFavorites] = useState<IProductProps[]>(() => {
