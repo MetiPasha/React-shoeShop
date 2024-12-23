@@ -115,7 +115,12 @@ const Login = () => {
           </button>
           <div className="flex gap-16 p-4 items-center">
             <p className="text-gray-400">dont have account yet</p>
-            <h2>Register Now</h2>
+            <h2
+              className="cursor-pointer"
+              onClick={() => navigate("/Register")}
+            >
+              Register Now
+            </h2>
           </div>
           {errorMessage && (
             <div className="text-red-500 mt-2">{errorMessage}</div>
