@@ -14,6 +14,7 @@ import Favorites from "./components/Faivorites/Faivorites.tsx";
 import AllProducts from "./components/Seeall/AllProducts.tsx";
 import Login from "./components/Login/Login.tsx";
 import Register from "./components/Login/Register.tsx";
+import ResetPassword from "./components/Login/ResetPassword.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
@@ -26,6 +27,7 @@ createRoot(document.getElementById("root")!).render(
       <Route path="slide3" element={<Slide3 />} />
       <Route path="/Login" element={<Login />} />
       <Route path="/Register" element={<Register />} />
+      <Route path="/ResetPassword" element={<ResetPassword />} />
       <Route path="/products/:brand" element={<BrandProducts />} />
       <Route path="/search/:query" element={<SearchResults />} />
       <Route path="/products/all" element={<AllProducts />} />

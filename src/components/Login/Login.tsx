@@ -105,6 +105,12 @@ const Login = () => {
               className="pl-10 py-2 border border-gray-300 rounded-md w-full"
             />
           </div>
+          <p
+            onClick={() => navigate("/ResetPassword")}
+            className="mt-2 cursor-pointer text-gray-400 hover:text-black"
+          >
+            Reset Password
+          </p>
 
           <button
             onClick={() => navigate("/Home")}
