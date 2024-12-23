@@ -228,7 +228,9 @@ const Register = () => {
 
           <div className="flex gap-16 p-4 items-center">
             <p className="text-gray-400">Don't have an account yet?</p>
-            <h2>Login Now</h2>
+            <h2 onClick={() => navigate("/Login")} className="cursor-pointer">
+              Login Now
+            </h2>
           </div>
         </form>
       </div>

@@ -107,6 +107,7 @@ const Login = () => {
           </div>
 
           <button
+            onClick={() => navigate("/Home")}
             type="submit"
             disabled={Date.now() < blockedUntil}
             className="rounded-full mt-36 text-xl bg-black text-white w-full p-2"
