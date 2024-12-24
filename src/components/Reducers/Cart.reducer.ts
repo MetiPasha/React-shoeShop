@@ -7,7 +7,6 @@ export interface CartItem {
   size: string;
   quantity: number;
 }
-
 export type CartAction =
   | { type: "ADD_ITEM"; payload: CartItem }
   | { type: "REMOVE_ITEM"; payload: string }
