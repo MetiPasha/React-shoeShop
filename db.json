@@ -36,10 +36,9 @@
       "label": "دمپایی"
     }
   ],
-
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "title": "adidas مدل 6985 زیر پلاستیکی",
       "rate": "3.8",
       "price": "24500000",
@@ -61,7 +60,7 @@
       "category": "1"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "asics مدل Gel Nimbus",
       "rate": "4.2",
       "price": "28000000",
@@ -83,7 +82,7 @@
       "category": "2"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "converse مدل Chuck Taylor",
       "rate": "4.5",
       "price": "20000000",
@@ -105,7 +104,7 @@
       "category": "3"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "newBalance مدل 990v5",
       "rate": "4.6",
       "price": "27000000",
@@ -127,7 +126,7 @@
       "category": "4"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "nike مدل Air Max 2023",
       "rate": "4.8",
       "price": "32000000",
@@ -149,7 +148,7 @@
       "category": "5"
     },
     {
-      "id": 6,
+      "id": "6",
       "title": "puma مدل RS-X3",
       "rate": "4.1",
       "price": "18000000",
@@ -171,7 +170,7 @@
       "category": "6"
     },
     {
-      "id": 7,
+      "id": "7",
       "title": "reebok مدل Classic Leather",
       "rate": "4.3",
       "price": "20000000",
@@ -193,7 +192,7 @@
       "category": "7"
     },
     {
-      "id": 8,
+      "id": "8",
       "title": "adidas مدل Ultra Boost",
       "rate": "4.7",
       "price": "35000000",
@@ -215,7 +214,7 @@
       "category": "1"
     },
     {
-      "id": 9,
+      "id": "9",
       "title": "asics مدل GT-2000",
       "rate": "4.4",
       "price": "23000000",
@@ -237,7 +236,7 @@
       "category": "2"
     },
     {
-      "id": 10,
+      "id": "10",
       "title": "nike مدل ZoomX Vaporfly Next%",
       "rate": "4.9",
       "price": "40000000",
@@ -259,7 +258,7 @@
       "category": "5"
     },
     {
-      "id": 11,
+      "id": "11",
       "title": "puma مدل Future Rider",
       "rate": "4.0",
       "price": "19000000",
@@ -281,7 +280,7 @@
       "category": "6"
     },
     {
-      "id": 12,
+      "id": "12",
       "title": "reebok مدل Zig Kinetica",
       "rate": "4.1",
       "price": "21000000",
@@ -303,11 +302,16 @@
       "category": "7"
     }
   ],
-  "comments": [{ "id": "1", "text": "a cooment about 1", "postId": "1" }],
-
+  "comments": [
+    {
+      "id": "1",
+      "text": "a cooment about 1",
+      "postId": "1"
+    }
+  ],
   "addtofavorite": [
     {
-      "id": 1,
+      "id": "1",
       "title": "adidas",
       "price": 245,
       "order": 0,
@@ -319,6 +323,26 @@
       "colorselect": "emerald",
       "quantity": 2,
       "totalPr": 490
+    }
+  ],
+  "cart": [
+    {
+      "productId": "1",
+      "title": "adidas مدل 6985 زیر پلاستیکی",
+      "price": "24500000",
+      "quantity": 2,
+      "size": "40",
+      "color": "emerald",
+      "id": 1
+    },
+    {
+      "productId": "2",
+      "title": "asics مدل Gel Nimbus",
+      "price": "28000000",
+      "quantity": 2,
+      "size": 43,
+      "color": "blue",
+      "id": 2
     }
   ]
 }
