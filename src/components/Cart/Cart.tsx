@@ -1,19 +1,33 @@
-import { CiSearch } from "react-icons/ci";
+// Cart.tsx
+import { useContext } from "react";
+import { CartContext } from "../Context/CartContext";
+import CartItemCard from "./CartItem";
+import Footer from "../Footer.components";
 
-export const Cart = () => {
+const Cart = () => {
+  const { cart } = useContext(CartContext);
+
+  const totalPrice = cart.reduce(
+    (acc, item) => acc + parseFloat(item.price) * item.quantity,
+    0
+  );
+
   return (
-    <>
-      <header className="flex justify-between px-5 mt-9 ">
-        <div className="flex items-center gap-5">
-          <img className="size-7" src="./assets/Cart/logo.png" alt="logo" />
-          <p className="text-4xl">my Cart</p>
-        </div>
-        <div className="flex items-center ">
-          <CiSearch className="text-3xl" />
-        </div>
-      </header>
-    </>
+    <div>
+      <h2>My Cart</h2>
+      {cart.length === 0 ? (
+        <p>Your cart is empty.</p>
+      ) : (
+        cart.map((item) => <CartItemCard key={item.id} item={item} />)
+      )}
+      <div className="flex items-center justify-between p-2 gap-16 w-full h-28 bg-gray-300 mt-4 fixed bottom-20 right-0">
+        <p className="text-2xl font-semibold">Total: ${totalPrice}</p>
+        <button className="w-56 bg-black text-white font-semibold rounded-full p-2 text-xl">
+          check out
+        </button>
+      </div>
+      <Footer />
+    </div>
   );
 };
-
 export default Cart;
