@@ -3,7 +3,7 @@ import CartQuantity from "./CartQuantity";
 import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import { CartItem } from "../reducers/cart.reducer";
-import Footer from "../Footer.components";
+import Footer from "../Footer";
 import Api from "../../api/base";
 
 const CartItemCard = ({ item }: { item: CartItem }) => {

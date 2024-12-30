@@ -2,7 +2,7 @@
 import { useContext } from "react";
 import { CartContext } from "../Context/CartContext";
 import CartItemCard from "./CartItem";
-import Footer from "../Footer.components";
+import Footer from "../Footer";
 
 const Cart = () => {
   const { cart } = useContext(CartContext);
