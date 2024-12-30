@@ -6,7 +6,7 @@ export const http = axios.create({
   timeout: TIMEOUT,
 });
 
-export const Http = {
+export const HTTP = {
   Get: http.get,
   Post: http.post,
   Delete: http.delete,
