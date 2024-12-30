@@ -1,8 +1,8 @@
 import { RiDeleteBin6Line } from "react-icons/ri";
 import CartQuantity from "./CartQuantity";
 import { useContext, useState } from "react";
-import { CartContext } from "../context/CartContext";
-import { CartItem } from "../reducers/cart.reducer";
+import { CartContext } from "../Context/CartContext";
+import { CartItem } from "../Reducers/Cart.reducer";
 import Footer from "../Footer";
 import Api from "../../api/base";
 
