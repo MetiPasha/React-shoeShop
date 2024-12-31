@@ -17,7 +17,6 @@ const ProductCard: FC<IProductProps> = ({
   title,
   price,
   images,
-  id,
   onClick,
 }): ReactElement => {
   return (
