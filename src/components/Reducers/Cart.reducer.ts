@@ -56,7 +56,7 @@ export const cartReducer = (
       }
 
     default:
-      console.error("Unknown action type:", action.type);
+      console.error("Unknown action type:");
       return state;
   }
 };
