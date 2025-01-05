@@ -8,21 +8,41 @@ export interface ProductImage {
   title: { src: string };
   list: { src: string }[];
 }
-
-export interface Products {
+export interface IProductDetail {
   id: number;
-  title: string;
-  rate: string;
-  price: string;
-  size: number[];
-  color: string[];
-  brand: string;
-  images: ProductImage;
-  discount: number;
-  views: number;
-  category: string;
+  name: string;
+  price: number;
+  isFavorite: boolean;
+  images: string[];
+  icon: string;
+  brand: string[];
+  colors: string[];
+  sizes: string[];
+  order: number;
+  is_popular: boolean;
+  description: string;
+  rating: number;
+  view_count: number;
+  sold_quantity: number;
 }
-
+export interface IProductProps {
+  id: number;
+  name: string;
+  price: number;
+  sold_quantity: number;
+  src: string;
+  description: string;
+  colors: string[];
+  images: string[];
+  isFavorite: string;
+  is_popular: boolean;
+  order: number;
+  rating: number;
+  sizes: string[];
+  view_count: number;
+  onClick: () => void;
+  onRemove: (id: number) => void; // Remove item
+}
 export interface Comment {
   id: string;
   text: string;
@@ -30,16 +50,34 @@ export interface Comment {
 }
 
 export interface CartItem {
-  id: number;
-  title: string;
+  productId: number;
+  name: string;
+  color: string;
+  size: string;
   price: number;
-  order: number;
-  size: number[];
-  color: string[];
-  brand: string;
-  images: string;
-  sizeselect: number;
-  colorselect: string;
   quantity: number;
-  totalPr: number;
+  images: string[];
+}
+
+// checkout
+export interface OrderItemProps {
+  name: string;
+  details: string;
+  price: string;
+  quantity: number;
+  imageUrl: string;
+}
+export interface OrderListProps {
+  items: OrderItemProps[];
+}
+
+export interface AmountSummaryProps {
+  amount: string;
+  shipping: string;
+  total: string;
+}
+export interface Address {
+  name: string;
+  address: string;
+  isSelected: boolean;
 }
