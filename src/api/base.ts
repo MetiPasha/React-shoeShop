@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getCookies } from "../components/utils/getCookies";
+import { getCookies } from "../components/Utils/getCookies";
 import { Cookies } from "react-cookie";
 
 export const Api = axios.create({
