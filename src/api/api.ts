@@ -1,33 +1,38 @@
 import { Address, CartItem, IProductDetail, IProductProps } from "../type";
-
-import Api, { httpPrivate } from "./base";
+import { httpPrivate } from "./base";
 
 // Updated fetchProducts function to properly handle params as an object
 export async function fetchProducts(params: { brand: string }) {
-  const response = await Api.get<IProductProps[]>("api/products", { params });
+  const response = await httpPrivate.get<IProductProps[]>("api/products", {
+    params,
+  });
   // console.log(response);
   return response.data;
 }
 
 export const fetchAllProducts = async (): Promise<IProductProps[]> => {
-  const response = await Api.get("/products");
+  const response = await httpPrivate.get("/products");
   return response.data || [];
 };
 
 export const fetchProductsByBrand = async (brand?: string) => {
-  const res = await Api.get<IProductProps[]>("api/products?brand=" + brand);
+  const res = await httpPrivate.get<IProductProps[]>(
+    "api/products?brand=" + brand
+  );
 
   console.log(res.data);
   return res.data;
 };
 
 export const getProductsById = async (id: string) => {
-  const response = await Api.get<IProductDetail>(`/api/products/${id}`);
+  const response = await httpPrivate.get<IProductDetail>(`/api/products/${id}`);
   return response.data;
 };
 
 export const fetchProductsByBrands = async (brand?: string) => {
-  const res = await Api.get<IProductDetail>("api/products?brands=" + brand);
+  const res = await httpPrivate.get<IProductDetail>(
+    "api/products?brands=" + brand
+  );
 
   // console.log(res.data);
   return res.data;
@@ -35,12 +40,12 @@ export const fetchProductsByBrands = async (brand?: string) => {
 
 // تابع برای دریافت اطلاعات محصول از API
 export const fetchProductDetail = async (id: string) => {
-  const response = await Api.get(`/api/products/${id}`);
+  const response = await httpPrivate.get(`/api/products/${id}`);
   return response.data;
 };
 
 export const getPopularProducts = async () => {
-  const response = await Api.get("api/products?is_popular=true");
+  const response = await httpPrivate.get("api/products?is_popular=true");
   return response.data;
 };
 
@@ -90,12 +95,12 @@ export const removeFromWishList = async (productId: number) => {
 
 // -----------cart------------
 export const addProductToCart = async (product: CartItem) => {
-  const response = await Api.post(`/cart`, product);
+  const response = await httpPrivate.post(`/cart`, product);
   return response.data;
 };
 
 export const removeProductFromCart = async (productId: number) => {
-  const response = await Api.delete(`/cart/${productId}`);
+  const response = await httpPrivate.delete(`/cart/${productId}`);
   return response.data;
 };
 
