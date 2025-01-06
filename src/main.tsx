@@ -21,7 +21,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { AuthProvider } from "./components/Context/auth.tsx";
 import { Provider } from "react-redux";
 import store from "./components/Store/index.tsx";
-
+import Checkout from "./components/Checkout/Checkout.tsx";
 const queryClient = new QueryClient();
 
 createRoot(document.getElementById("root")!).render(
@@ -46,6 +46,7 @@ createRoot(document.getElementById("root")!).render(
               <Route path="/productdetail/:id" element={<ProductDetail />} />
               <Route path="/favorites" element={<Favorites />} />
               <Route path="/Cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
             </Routes>
           </BrowserRouter>
         </AuthProvider>
