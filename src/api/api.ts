@@ -1,12 +1,12 @@
 import { Address, CartItem, IProductDetail, IProductProps } from "../type";
 import { httpPrivate } from "./base";
 
-// Updated fetchProducts function to properly handle params as an object
+
 export async function fetchProducts(params: { brand: string }) {
   const response = await httpPrivate.get<IProductProps[]>("api/products", {
     params,
   });
-  // console.log(response);
+  
   return response.data;
 }
 
@@ -34,11 +34,11 @@ export const fetchProductsByBrands = async (brand?: string) => {
     "api/products?brands=" + brand
   );
 
-  // console.log(res.data);
+  
   return res.data;
 };
 
-// تابع برای دریافت اطلاعات محصول از API
+
 export const fetchProductDetail = async (id: string) => {
   const response = await httpPrivate.get(`/api/products/${id}`);
   return response.data;
@@ -51,14 +51,10 @@ export const getPopularProducts = async () => {
 
 // Fetch wishlist items from server
 export const fetchWishList = async () => {
-  // const token=getCookies()
+ 
   const response = await httpPrivate.get(
     "/api/wishlist"
-    // , {
-    // headers: {
-    //   Authorization: `Bearer ${token}`, // ارسال توکن به عنوان Authorization
-    // },
-    // }
+  
   );
 
   return response.data;
@@ -66,29 +62,22 @@ export const fetchWishList = async () => {
 
 // Add a product to wishlist
 export const addToWishList = async (productId: number) => {
-  // const token=getCookies()
+  
   const response = await httpPrivate.post(
     "/api/wishlist",
     { productId }
-    //   , {
-    //   headers: {
-    //     Authorization: `Bearer ${token}`,
-    //   },
-    // }
+  
   );
   return response.data;
 };
 
 // Remove a product from wishlist
 export const removeFromWishList = async (productId: number) => {
-  // const token=getCookies()
+  
 
   const response = await httpPrivate.delete(
     `/api/wishlist/${productId}`
-    // ,
-    //  { headers: {
-    //     Authorization: `Bearer ${token}`,
-    //   }},
+   
   );
   return response.data;
 };
