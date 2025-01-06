@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { MdEmail } from "react-icons/md";
 import { PiLockKeyBold } from "react-icons/pi";
@@ -7,7 +7,8 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { ILoginApiParams, loginApi } from "../../api/auth.ts";
-import { useAuth } from "../Context/auth.tsx";
+import { useAuth } from "../Context/auth.ts";
+import { Cookies } from "react-cookie";
 
 export interface ILoginFormData {
   username: string;
@@ -62,13 +63,17 @@ const Login = () => {
       setErrorMessage("You are blocked for 5 minutes. Please try again later.");
     }
   }, []);
+  const cookie = new Cookies();
 
   const loginMutation = useMutation({
-    mutationKey: "loginApi",
+    mutationKey: ["loginApi"],
     mutationFn: (data: ILoginApiParams) => loginApi(data),
     onSuccess: (data) => {
       const { username, accessToken } = data.data;
       setAuth(username, accessToken); // Set user info using context
+      cookie.set("shoeToken", accessToken);
+      console.log(username, accessToken);
+
       setErrorMessage("Login successful!");
       navigate("/home");
     },
