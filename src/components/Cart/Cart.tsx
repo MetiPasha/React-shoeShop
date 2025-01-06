@@ -1,8 +1,8 @@
 import CartItemCard from "./CartItem";
 import Footer from "../Footer";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../store";
-import { removeFromCart, updateQuantity } from "../store/cartSlice";
+import { RootState } from "../Store";
+import { removeFromCart, updateQuantity } from "../Store/cartSlice";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
