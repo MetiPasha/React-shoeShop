@@ -7,7 +7,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { ILoginApiParams, loginApi } from "../../api/auth.ts";
-import { useAuth } from "../Context/auth.ts";
+import { useAuth } from "../Context/auth.tsx";
 import { Cookies } from "react-cookie";
 
 export interface ILoginFormData {
@@ -20,7 +20,7 @@ const Login = () => {
   const [blockedUntil, setBlockedUntil] = useState<number>(0);
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-  const { setAuth } = useAuth(); // Use setAuth from context
+  const { set } = useAuth(); // Use setAuth from context
 
   const usernameSchema = z
     .string()
@@ -70,7 +70,7 @@ const Login = () => {
     mutationFn: (data: ILoginApiParams) => loginApi(data),
     onSuccess: (data) => {
       const { username, accessToken } = data.data;
-      setAuth(username, accessToken); // Set user info using context
+      set(username, accessToken); // Set user info using context
       cookie.set("shoeToken", accessToken);
       console.log(username, accessToken);
 

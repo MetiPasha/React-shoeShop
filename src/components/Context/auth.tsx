@@ -6,6 +6,7 @@ import {
   useContext,
   useReducer,
 } from "react";
+import { setAuth } from "../Store/authSlice";
 
 const initialValue: IAuthContextValue = {
   username: "",
@@ -73,6 +74,7 @@ export const AuthProvider: FC<IAuthProviderProps> = ({
 
   const contextValue = {
     auth,
+    setAuth,
     handleClear,
     handleSet,
   };
