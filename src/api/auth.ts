@@ -1,17 +1,25 @@
-import { AxiosResponse } from "axios";
-import { HTTP } from "../components/Services/http.services";
+// src/api/auth.api.ts
+import axios, { AxiosResponse } from "axios";
+import { Api } from "../components/Config/api.config";
 
 export interface ILoginApiParams {
   username: string;
   password: string;
 }
+
 export interface ILoginApiResponse {
   message: string;
   accessToken: string;
   username: string;
 }
+
+const axiosInstance = axios.create({
+  baseURL: Api,
+  timeout: 2000,
+});
+
 export const loginApi = async (
   data: ILoginApiParams
 ): Promise<AxiosResponse<ILoginApiResponse>> => {
-  return HTTP.Post("/auth/login", data);
+  return axiosInstance.post("/auth/login", data);
 };
