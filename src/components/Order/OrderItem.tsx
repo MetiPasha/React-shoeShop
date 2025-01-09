@@ -7,7 +7,7 @@ const OrderItem: React.FC<OrderItemProps> = ({
   quantity,
   imageUrl,
 }) => (
-  <div className="flex items-center gap-4 p-4 bg-gray-100 rounded-lg">
+  <div className="flex my-3 items-center gap-4 p-4 bg-gray-100 rounded-lg">
     <img
       src={imageUrl}
       alt={name}
