@@ -1,17 +1,23 @@
-import CartItemCard from "./CartItem";
-import Footer from "../Footer";
+// Cart.tsx
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../Store";
 import { removeFromCart, updateQuantity } from "../Store/cartSlice";
+import { removeProductFromCart } from "../../api/api"; // حذف از API
 import { Link } from "react-router-dom";
+import Footer from "../Footer";
+import CartItemCard from "./CartItem";
+import { RootState } from "../Store";
 
 const Cart = () => {
   const dispatch = useDispatch();
-
   const cartItems = useSelector((state: RootState) => state.cart.items);
 
-  const handleRemove = (productId: number) => {
-    dispatch(removeFromCart(productId));
+  const handleRemove = async (productId: number) => {
+    try {
+      await removeProductFromCart(productId); // حذف از API
+      dispatch(removeFromCart(productId)); // حذف از Redux
+    } catch (error) {
+      console.error("Error removing product from cart:", error);
+    }
   };
 
   const handleQuantityChange = (productId: number, quantity: number) => {
@@ -41,12 +47,13 @@ const Cart = () => {
         <p className="text-2xl font-semibold">Total: ${totalPrice}</p>
         <Link to="/checkout">
           <button className="w-56 bg-black text-white font-semibold rounded-full p-2 text-xl">
-            check out
+            Check out
           </button>
-        </Link>{" "}
+        </Link>
       </div>
       <Footer />
     </div>
   );
 };
+
 export default Cart;
