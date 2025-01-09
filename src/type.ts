@@ -60,6 +60,20 @@ export interface CartItem {
 }
 
 // checkout
+
+export interface AmountSummaryProps {
+  amount: string;
+  shipping: string;
+  total: string;
+}
+export interface Address {
+  name: string;
+  address: string;
+  isSelected: boolean;
+}
+
+// ---------------order
+
 export interface OrderItemProps {
   name: string;
   details: string;
@@ -71,13 +85,22 @@ export interface OrderListProps {
   items: OrderItemProps[];
 }
 
-export interface AmountSummaryProps {
-  amount: string;
-  shipping: string;
-  total: string;
-}
-export interface Address {
+export interface Order {
+  userId: number;
+  status: string;
   name: string;
+  productId: number;
+  count: number;
+  color: string;
+  size: number;
+  images: string[];
+  price: number;
+  total_price: number;
+  shippingType: string;
   address: string;
-  isSelected: boolean;
+}
+
+// -------------------discount
+export interface PromoCodeProps {
+  onDiscountApplied: (discount: number) => void;
 }
